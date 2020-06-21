@@ -1,4 +1,8 @@
 var express = require("express");
+var util = require("./data/helper");
+var cookieParser = require("cookie-parser");
+var bodyParser = require("body-parser");
+
 
 var indexRouter = require("./routes/index");
 var app = express();
@@ -12,7 +16,14 @@ app.use(function (req, res, next) {
     );
     next();
   });
+
   
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(bodyParser.json());
+
+
   app.use("/", indexRouter);
 
   // catch 404 and forward to error handler
@@ -35,8 +46,8 @@ app.use(function (req, res, next) {
     console.log("now connected to db");
   });
   
-  app.listen(PORT, () => {
-    console.log(`running port ${PORT}`);
+  app.listen(5000, () => {
+    console.log(`running port ${5000}`);
   });
   
   module.exports = app;

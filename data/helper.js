@@ -1,5 +1,5 @@
 // const {MongoClient} = require('mongodb');
- const uri = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false";
+ const uri = "mongodb+srv://dbUser:dbPassword@examcluster-vkinr.azure.mongodb.net/test?useUnifiedTopology=true";
 
 // const client = new MongoClient(uri);
 
@@ -10,7 +10,7 @@ var _client;
 // var connectionString = "mongodb+srv://admin:m0b1l3@cluster0-gmij9.mongodb.net/test?useUnifiedTopology=true&retryWrites=true&w=majority"; 
 
 //var connectionString = "mongodb://localhost:27017/clinicdb"
-console.log(config);
+//console.log(config);
 
 module.exports = {
   connectToDb: function (callback) {
